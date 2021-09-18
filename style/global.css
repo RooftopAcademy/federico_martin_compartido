@@ -1,0 +1,121 @@
+html {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	min-height: 100%;
+	margin: 0;
+	color: #353535;
+	font-family: "Roboto Slab", serif;
+	display: flex;
+	flex-direction: column;
+}
+
+header {
+	padding: 1.5rem 1em 1.5rem 1em;
+	color: #ff9f1c;
+	background-color: #cbf3f0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1.5em;
+}
+
+header h1 {
+	font-size: 2.2rem;
+	font-weight: 50;
+	font-family: "Lobster", cursive;
+	margin: 0;
+}
+
+.logo-name {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.5em;
+}
+
+.cart {
+	display: flex;
+}
+
+.fa,
+.fas {
+	font-size: 2.2rem;
+	color: #2ec4b6;
+}
+
+header navbar ul {
+	font-size: 2rem;
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	list-style: none;
+	margin: 0;
+}
+
+.menu ul li a {
+	color: #2ec4b6;
+	font-size: 0.85em;
+	transition: 0.5s;
+}
+
+.menu ul li a:hover {
+	color: #ff9f1c;
+}
+
+.hamburger {
+	display: none;
+}
+
+.checkmenu {
+	display: none;
+}
+
+@media screen and (max-width: 576px) {
+	.hamburger {
+		display: block;
+		cursor: pointer;
+	}
+	.menu {
+		display: none;
+	}
+	.checkmenu:checked + .menu {
+		display: block;
+	}
+}
+
+section {
+	margin: auto;
+	margin-top: 2em;
+	text-align: center;
+	flex-grow: 1;
+}
+
+article {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5em;
+}
+
+.cantidad {
+	font-size: 1.2rem;
+	width: 3rem;
+}
+
+a {
+	text-decoration: none;
+}
+
+footer {
+	font-size: 1.1rem;
+	text-align: center;
+	margin-top: 3em;
+	background-color: #cbf3f0;
+}
+
+.hidden {
+	visibility: hidden;
+	opacity: 0;
+}

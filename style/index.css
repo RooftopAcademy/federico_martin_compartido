@@ -1,0 +1,26 @@
+.material-icons-outlined {
+	color: #ffbf69;
+	transition: 1s;
+}
+
+.to-hover:hover .material-icons-outlined {
+	color: #ff9f1c;
+	transform: rotate(360deg);
+}
+
+.icono {
+	font-size: 5rem !important;
+}
+
+.fade {
+	transition: 1s;
+}
+
+.visible {
+	visibility: visible;
+	opacity: 1;
+}
+
+article {
+	margin-top: 5rem;
+}
