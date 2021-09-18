@@ -28,10 +28,14 @@
 				<h1>MiTienda</h1>
 			</div>
 			<div class="cart">
-				<span class="material-icons-outlined">shopping_cart</span>
+				<span class="material-icons-outlined icono-cart">shopping_cart</span>
 				<span id="counter"> 0</span>
 			</div>
-			<navbar>
+			<label id="hamburger" class="hamburger" for="checkmenu"
+				><i class="fas fa-bars"></i
+			></label>
+			<input type="checkbox" class="checkmenu" id="checkmenu" />
+			<navbar class="menu">
 				<ul>
 					<li>
 						<a href="index.html">Inicio</a>
@@ -45,7 +49,7 @@
 		<section>
 			<article>
 				<div id="to-hover" class="to-hover">
-					<span class="material-icons-outlined icono" id="icon">
+					<span class="material-icons-outlined icono-central" id="icon">
 						checkroom
 					</span></br>
 					<a href="shop.html" id="ver-productos" class="fade hidden"

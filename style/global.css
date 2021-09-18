@@ -13,13 +13,13 @@ body {
 }
 
 header {
-	padding: 1.5rem 1em 1.5rem 1em;
+	padding: 1.5rem 1em 0 1em;
 	color: #ff9f1c;
 	background-color: #cbf3f0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	gap: 1.5em;
+	flex-wrap: wrap;
 }
 
 header h1 {
@@ -32,12 +32,18 @@ header h1 {
 .logo-name {
 	display: flex;
 	flex-direction: row;
+	flex-grow: 1;
 	align-items: center;
 	gap: 0.5em;
+	margin-bottom: 1.5rem;
 }
 
 .cart {
 	display: flex;
+	align-items: center;
+	font-size: 1.3rem;
+	margin-right: 1rem;
+	margin-bottom: 1.5rem;
 }
 
 .fa,
@@ -53,6 +59,10 @@ header navbar ul {
 	gap: 1em;
 	list-style: none;
 	margin: 0;
+}
+
+.menu {
+	margin-bottom: 1.5rem;
 }
 
 .menu ul li a {
@@ -77,12 +87,16 @@ header navbar ul {
 	.hamburger {
 		display: block;
 		cursor: pointer;
+		margin-bottom: 1.5rem;
 	}
 	.menu {
 		display: none;
 	}
 	.checkmenu:checked + .menu {
 		display: block;
+		width: 100%;
+		border-top: 1px solid rgb(83, 83, 83);
+		margin-bottom: 0.5rem;
 	}
 }
 

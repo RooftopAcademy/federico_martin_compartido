@@ -1,15 +1,15 @@
-.material-icons-outlined {
+.icono-central {
 	color: #ffbf69;
 	transition: 1s;
 }
 
-.to-hover:hover .material-icons-outlined {
+.to-hover:hover .icono-central {
 	color: #ff9f1c;
 	transform: rotate(360deg);
 }
 
-.icono {
-	font-size: 5rem !important;
+.icono-central {
+	font-size: 6rem !important;
 }
 
 .fade {
