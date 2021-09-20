@@ -1,6 +1,8 @@
 const counter = document.getElementById("counter");
 const comprarBtn = document.getElementsByName("comprar");
 
+const store = new Store();
+
 comprarBtn.forEach((button) =>
 	button.addEventListener("click", (e) => {
 		if (e.target.previousElementSibling.value == 0) {
