@@ -44,7 +44,7 @@ img {
 article {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 2fr 0.6fr 1.5fr;
+	grid-template-rows: 2fr 0.4fr 3fr;
 	grid-template-areas:
 		"img"
 		"name-price"
@@ -53,4 +53,18 @@ article {
 	gap: 0.2em;
 	max-width: 70%;
 	margin: auto;
+}
+
+@media screen and (min-width: 576px) {
+	.name-price h2 {
+		font-size: 2rem;
+		margin-bottom: 0.5rem;
+	}
+	.name-price span {
+		font-size: 1.8rem;
+		margin-bottom: 0.5rem;
+	}
+	.detalles {
+		font-size: 1.6rem;
+	}
 }
