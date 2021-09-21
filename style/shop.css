@@ -1,12 +1,15 @@
 article {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	gap: 2em;
 	flex-wrap: wrap;
 	margin: 2em;
 }
 .product {
 	display: flex;
+	width: 70%;
 	gap: 2em;
 	transition: 0.5s;
 	box-shadow: none;
@@ -24,12 +27,12 @@ article {
 	justify-content: center;
 	flex-direction: column;
 	align-items: flex-start;
-	white-space: nowrap;
 	gap: 0.8rem;
 }
 .product-info h2 {
 	margin: 0;
 	font-size: 2.5rem;
+	text-align: left;
 }
 
 .product-info span {
@@ -49,7 +52,6 @@ article {
 img {
 	width: 50%;
 	max-width: 50vw;
-	min-width: 150px;
 	object-fit: cover;
 	border: 5px solid #ffbf69;
 	border-radius: 20px;
@@ -64,6 +66,7 @@ img {
 	}
 	.product {
 		gap: 0.6em;
+		width: 100%;
 	}
 	.product-info {
 		gap: 0rem;

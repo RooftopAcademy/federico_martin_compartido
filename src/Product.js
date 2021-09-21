@@ -1,11 +1,32 @@
 class Product {
-	constructor(name, price, imgURL, details) {
+	constructor() {
+		this._name = String;
+		this._price = Number;
+		this._id = Number;
+		this._details = String;
+	}
+	get name() {
+		return this._name;
+	}
+	set name(name) {
 		this._name = name;
-		this._price = price;
-		this._imgURL = imgURL;
-		this._details = details;
 	}
 	get price() {
-		return this.price;
+		return this._price;
+	}
+	set price(price) {
+		this._price = price;
+	}
+	get id() {
+		return this._id;
+	}
+	set id(id) {
+		this._id = id;
+	}
+	get details() {
+		return this._details;
+	}
+	set details(details) {
+		this._details = details;
 	}
 }
