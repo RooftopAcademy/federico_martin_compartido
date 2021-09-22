@@ -11,3 +11,14 @@ comprarBtn.forEach((button) =>
 		}
 	})
 );
+
+const store = new Store();
+const productsContainer = document.getElementById("products-container");
+
+(async () => {
+	await store.setCatalog();
+	store.catalog.products.forEach((product) => {
+		console.log(productsContainer);
+		appendProduct(productsContainer, product);
+	});
+})();

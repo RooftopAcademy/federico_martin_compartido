@@ -24,3 +24,12 @@
 article {
 	margin-top: 5rem;
 }
+
+@media screen and (min-width: 576px) {
+	.icono-central {
+		font-size: 10rem !important;
+	}
+	.ver-productos {
+		font-size: 2rem;
+	}
+}

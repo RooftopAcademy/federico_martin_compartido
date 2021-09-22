@@ -19,6 +19,29 @@
 			crossorigin="anonymous"
 		></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<script
+			type="text/javascript"
+			src="src/components/productView.js"
+			defer
+		></script>
+		<script
+			type="text/javascript"
+			src="src/fetchProducts.js"
+			defer
+		></script>
+		<script
+			type="text/javascript"
+			src="src/appendProduct.js"
+			defer
+		></script>
+
+		<script type="text/javascript" src="src/Store.js" defer></script>
+		<script type="text/javascript" src="src/Cart.js" defer></script>
+		<script type="text/javascript" src="src/Catalog.js" defer></script>
+		<script type="text/javascript" src="src/Product.js" defer></script>
+
+		<script type="text/javascript" src="js/app.js" defer></script>
 	</head>
 
 	<body>
@@ -49,59 +72,10 @@
 			</navbar>
 		</header>
 		<section>
-			<article>
-				<div class="product">
-					<img src="./images/blue-t-shirt.jpg" class="blue-shirt" />
-					<div class="product-info">
-						<h2>Remera azul</h2>
-						<span>$1000</span><a href="details.html">Detalles</a>
-						<div>
-							<input
-								type="number"
-								class="cantidad"
-								name="cantidad"
-								min="0"
-								placeholder="0"
-							/><button name="comprar">Comprar</button>
-						</div>
-					</div>
-				</div>
-				<div class="product">
-					<img src="./images/green-t-shirt.jpg" class="green-shirt" />
-					<div class="product-info">
-						<h2>Remera verde</h2>
-						<span>$1000</span><a href="details.html">Detalles</a>
-						<div>
-							<input
-								type="number"
-								class="cantidad"
-								name="cantidad"
-								min="0"
-								placeholder="0"
-							/><button name="comprar">Comprar</button>
-						</div>
-					</div>
-				</div>
-				<div class="product">
-					<img src="./images/red-t-shirt.jpg" class="red-shirt" />
-					<div class="product-info">
-						<h2>Remera roja</h2>
-						<span>$1000</span><a href="details.html">Detalles</a>
-						<div>
-							<input
-								type="number"
-								class="cantidad"
-								name="cantidad"
-								min="0"
-								placeholder="0"
-							/><button name="comprar">Comprar</button>
-						</div>
-					</div>
-				</div>
+			<article id="products-container">
+				<!-- JS -->
 			</article>
 		</section>
 		<footer><a href="https://github.com/fl-martin">fl-martin</a></footer>
-		<script type="text/javascript" src="js/classes.js"></script>
-		<script type="text/javascript" src="js/global.js"></script>
 	</body>
 </html>
