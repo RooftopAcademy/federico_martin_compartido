@@ -1,0 +1,25 @@
+{
+  "name": "federico_martin_compartido",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RooftopAcademy/federico_martin_compartido.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RooftopAcademy/federico_martin_compartido/issues"
+  },
+  "homepage": "https://github.com/RooftopAcademy/federico_martin_compartido#readme",
+  "devDependencies": {
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.4.3",
+    "webpack": "^5.53.0",
+    "webpack-cli": "^4.8.0"
+  }
+}
