@@ -1,5 +1,6 @@
 import Store from "../src/Store";
 import appendProduct from "../src/appendProduct";
+import ProductInt from "../src/interfaces/ProductInt";
 
 const store = new Store();
 const productsContainer: HTMLElement | null =
@@ -7,14 +8,15 @@ const productsContainer: HTMLElement | null =
 
 (async (): Promise<void> => {
 	await store.setCatalog();
-	store.catalog.products.forEach(
-		async (product: { id: number; title: string; price: number }) => {
-			appendProduct(productsContainer, product);
-		}
-	);
+
+	store.catalog.products.forEach(async (product: ProductInt) => {
+		appendProduct(productsContainer, product);
+	});
+
 	const comprarBtn: Element[] = Array.from(
 		document.getElementsByClassName("comprar")
 	);
+
 	comprarBtn.forEach((button: Element) => {
 		button.addEventListener("click", (e: Event) => {
 			if (e) {

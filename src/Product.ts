@@ -1,31 +1,29 @@
-export default class Product {
-	_title!: string;
-	_id!: number;
-	_price!: number;
-	_description!: string;
+import ProductInt from "./interfaces/ProductInt";
 
-	get title() {
-		return this._title;
+export default class Product implements ProductInt {
+	title!: string;
+	id!: number;
+	price!: number;
+	description!: string;
+
+	geTTitle() {
+		return this.title;
 	}
-	set title(name) {
-		this._title = name;
+
+	getPrice() {
+		return this.price;
 	}
-	get price() {
-		return this._price;
+
+	getID() {
+		return this.id;
 	}
-	set price(price) {
-		this._price = price;
-	}
-	get id() {
-		return this._id;
-	}
-	set id(id) {
-		this._id = id;
-	}
-	get description() {
-		return this._description;
-	}
-	set description(details) {
-		this._description = details;
+
+	getDescription() {
+		return this.description;
 	}
 }
+
+//AL USAR LA INTERFACE BORRE LOS _ Y REFORMULE GETTERS, ESTA OK?
+//BORRE SETTERS EN BASE A Note that a field-backed get/set pair with no extra logic
+//is very rarely useful in JavaScript. It’s fine to expose public fields if
+//you don’t need to add additional logic during the get/set operations.
