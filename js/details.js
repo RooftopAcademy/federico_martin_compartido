@@ -1,2 +1,5 @@
+"use strict";
 const productName = document.getElementById("product-name");
-productName.innerHTML = "Remera Azul";
+if (productName) {
+    productName.innerHTML = "Remera Azul";
+}

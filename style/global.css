@@ -87,7 +87,7 @@ header navbar ul {
 	display: none;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
 	.fa,
 	.fas {
 		font-size: 2.2rem;
