@@ -2,13 +2,13 @@ import ProductInt from "../interfaces/ProductInt";
 
 export default function productView(product: ProductInt): string {
 	return `
-    <div class="product">
-    <img src="./images/${product.id}.jpg" class="blue-shirt" />
+    <div class="product" data-index=${product.id}>
+    <img src="${product.image}" class="blue-shirt" />
     <div class="product-info">
         <h2>${product.title}</h2>
         <span>$${product.price.toFixed(
 			2
-		)}</span><a href="details.html">Detalles</a>
+		)}</span><a href="/details" class="router">Detalles</a>
         <div>
             <input
                 type="number"

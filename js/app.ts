@@ -1,39 +1,54 @@
 import Store from "../src/Store";
-import appendProduct from "../src/appendProduct";
-import ProductInt from "../src/interfaces/ProductInt";
+import homePage from "../src/components/homePage";
+import shopPage from "../src/components/shopPage";
+import detailsPage from "../src/components/detailsPage";
+import errorPage from "../src/components/errorPage";
+import homeLogic from "./homeLogic";
+import shopLogic from "./shopLogic";
+import detailsLogic from "./detailsLogic";
+import eventListeners from "../src/EventListeners";
+
+const container: HTMLElement | null = document.getElementById("content");
+
+function App(container: HTMLElement | null): {
+	render: (route: string, e: Event) => void;
+} {
+	const routes: any = {
+		"http://127.0.0.1:5500/": homePage,
+		"http://127.0.0.1:5500/shop": shopPage,
+		"http://127.0.0.1:5500/details": detailsPage,
+		"/404": errorPage,
+	};
+
+	const logic: any = {
+		"http://127.0.0.1:5500/": homeLogic,
+		"http://127.0.0.1:5500/shop": shopLogic,
+		"http://127.0.0.1:5500/details": detailsLogic,
+		//	"/404": errorPageLogic,
+	};
+
+	function render(route: string, e: Event) {
+		if (container) {
+			if (routes[route]) {
+				container.innerHTML = routes[route](e);
+				logic[route]();
+			} else {
+				container.innerHTML = routes["/404"]();
+			}
+		}
+	}
+
+	return { render };
+}
+
+const app = App(container);
 
 const store = new Store();
-const productsContainer: HTMLElement | null =
-	document.getElementById("products-container");
 
 (async (): Promise<void> => {
 	await store.setCatalog();
-
-	store.catalog.products.forEach(async (product: ProductInt) => {
-		appendProduct(productsContainer, product);
-	});
-
-	const comprarBtn: Element[] = Array.from(
-		document.getElementsByClassName("comprar")
-	);
-
-	comprarBtn.forEach((button: Element) => {
-		button.addEventListener("click", (e: Event) => {
-			if (e) {
-				const target = e.target as HTMLElement;
-				const preTarget =
-					target.previousElementSibling as HTMLInputElement;
-				if (preTarget.value == "0") {
-					alert("Elige cuántas prendas quieres comprar");
-				} else {
-					store.cart.addProduct = Number(preTarget.value);
-					if (counter) {
-						counter.innerHTML = String(store.cart.counter);
-					}
-				}
-			}
-		});
-	});
 })();
 
-const counter: HTMLElement | null = document.getElementById("counter");
+eventListeners();
+
+export { store, app };

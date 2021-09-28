@@ -5,6 +5,7 @@ export default class Product implements ProductInt {
 	id!: number;
 	price!: number;
 	description!: string;
+	image!: string;
 
 	geTTitle() {
 		return this.title;
@@ -20,6 +21,10 @@ export default class Product implements ProductInt {
 
 	getDescription() {
 		return this.description;
+	}
+
+	getImage() {
+		return this.image;
 	}
 }
 
