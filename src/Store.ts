@@ -19,6 +19,7 @@ export default class Store {
 	}
 	async setCatalog() {
 		const data = await fetchProducts();
+
 		data.forEach((item: ProductInt) => {
 			const product: ProductInt = new Product();
 			product.title = item.title;

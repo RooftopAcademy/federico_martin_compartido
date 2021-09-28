@@ -26,14 +26,12 @@ export default function eventListeners() {
 		});
 	});
 
-	Array.from(document.getElementsByClassName("router")).forEach((el) => {
+	/*	Array.from(document.getElementsByClassName("router")).forEach((el) => {
 		el.addEventListener("click", function (e: Event) {
-			e.preventDefault();
+			const route: string = window.location.hash;
 
-			const target: HTMLAnchorElement = e.target as HTMLAnchorElement;
-			const route: string = target.href;
-
-			app.render(route, e);
+			console.log(route);
+			app.render(route);
 		});
-	});
+	});*/
 }
