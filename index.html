@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<title>Clase 8/9 - Inicio</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mi Tienda</title>
 		<link rel="stylesheet" href="style/global.css" />
 		<link rel="stylesheet" href="style/index.css" />
+		<link rel="stylesheet" href="style/details.css" />
+		<link rel="stylesheet" href="style/shop.css" />
+
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -18,11 +24,9 @@
 			src="https://kit.fontawesome.com/af6f5656a5.js"
 			crossorigin="anonymous"
 		></script>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<script type="text/javascript" src="dist/bundle.js" defer></script>
 	</head>
-
 	<body>
 		<header>
 			<div class="logo-name">
@@ -30,7 +34,9 @@
 				<h1>MiTienda</h1>
 			</div>
 			<div class="cart">
-				<span class="material-icons-outlined icono-cart">shopping_cart</span>
+				<span class="material-icons-outlined icono-cart"
+					>shopping_cart</span
+				>
 				<span id="counter"> 0</span>
 			</div>
 			<label id="hamburger" class="hamburger" for="checkmenu"
@@ -40,26 +46,16 @@
 			<navbar class="menu">
 				<ul>
 					<li>
-						<a href="index.html">Inicio</a>
+						<a class="router" href="/">Inicio</a>
 					</li>
 					<li>
-						<a href="shop.html">Productos</a>
+						<a class="router" href="/shop">Productos</a>
 					</li>
 				</ul>
 			</navbar>
 		</header>
-		<section>
-			<article>
-				<div id="to-hover" class="to-hover">
-					<span class="material-icons-outlined icono-central" id="icon">
-						checkroom
-					</span></br>
-					<a href="shop.html" id="ver-productos" class="fade hidden ver-productos"
-						>Ver Listado de Productos</a
-					>
-				</div>
-			</article>
-		</section>
+		<section id="content"></section>
+
 		<footer>
 			<a href="https://github.com/fl-martin">fl-martin</a>
 		</footer>

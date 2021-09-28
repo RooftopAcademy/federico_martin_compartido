@@ -25,6 +25,7 @@ export default class Store {
 			product.id = item.id;
 			product.price = item.price;
 			product.description = item.description;
+			product.image = item.image;
 			this._catalog.addProducts(product);
 		});
 	}

@@ -3,4 +3,5 @@ export default interface ProductInt {
 	id: number;
 	price: number;
 	description: string;
+	image: string;
 }
