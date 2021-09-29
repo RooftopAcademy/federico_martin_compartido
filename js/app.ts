@@ -45,9 +45,9 @@ function App(container: HTMLElement): {
 		window.onload = function () {
 			window.location.hash = "#/";
 		};
-		if (container) {
-			container.innerHTML = routes["#/"]();
-		}
+
+		container.innerHTML = routes["#/"]();
+
 		homeLogic();
 	}
 
@@ -66,9 +66,7 @@ window.addEventListener("hashchange", () => {
 
 const store = new Store();
 
-(async (): Promise<void> => {
-	await store.setCatalog(fetchProducts);
-})();
+store.setCatalog(fetchProducts);
 
 export { store, app };
 

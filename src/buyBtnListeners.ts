@@ -11,13 +11,15 @@ export default function buyBtnListeners(store: Store) {
 		button.addEventListener("click", (e: Event) => {
 			if (e) {
 				const target = e.target as HTMLElement;
+
 				const preTarget =
 					target.previousElementSibling as HTMLInputElement;
-				console.log(preTarget.value);
+
 				if (!preTarget.value) {
 					alert("Elige cuántas prendas quieres comprar"); //cambiar por estilo error
 				} else {
 					store.cart.addProduct = Number(preTarget.value);
+
 					if (counter) {
 						counter.innerHTML = String(store.cart.counter);
 					}
