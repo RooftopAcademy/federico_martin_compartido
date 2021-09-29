@@ -1,7 +1,6 @@
 import Product from "./Product";
 import Catalog from "./Catalog";
 import Cart from "./Cart";
-import fetchProducts from "./fetchProducts";
 import ProductInt from "./interfaces/ProductInt";
 
 export default class Store {
@@ -17,8 +16,8 @@ export default class Store {
 	get catalog() {
 		return this._catalog;
 	}
-	async setCatalog() {
-		const data = await fetchProducts();
+	async setCatalog(fetchFunction: () => Promise<[]>) {
+		const data = await fetchFunction();
 
 		data.forEach((item: ProductInt) => {
 			const product: ProductInt = new Product();

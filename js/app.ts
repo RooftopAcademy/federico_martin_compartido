@@ -6,7 +6,7 @@ import errorPage from "../src/components/errorPage";
 import homeLogic from "./homeLogic";
 import shopLogic from "./shopLogic";
 import detailsLogic from "./detailsLogic";
-import eventListeners from "../src/EventListeners";
+import fetchProducts from "../src/fetchProducts";
 
 const container: HTMLElement | null = document.getElementById("content");
 
@@ -58,12 +58,6 @@ function App(container: HTMLElement | null): {
 
 const app = App(container);
 
-const store = new Store();
-
-(async (): Promise<void> => {
-	await store.setCatalog();
-})();
-
 app.initialPage();
 
 window.addEventListener("hashchange", () => {
@@ -71,5 +65,11 @@ window.addEventListener("hashchange", () => {
 
 	app.render(route);
 });
+
+const store = new Store();
+
+(async (): Promise<void> => {
+	await store.setCatalog(fetchProducts);
+})();
 
 export { store, app };
