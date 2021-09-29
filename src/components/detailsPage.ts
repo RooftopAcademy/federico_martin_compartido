@@ -1,13 +1,10 @@
 import { store } from "../../js/app";
 
-export default function details(e: Event): string {
-	const target = e.target as HTMLElement;
-	const productIndex = target.parentElement?.parentElement?.dataset.index;
+export default function detailsPage(hash: string): string {
 	const product = store.catalog.products.filter((prod) => {
-		return prod.id == Number(productIndex);
+		return prod.id == Number(hash);
 	})[0];
 
-	//buscar en catalogo por ID
 	return `<article>
     <img src="${product.image}"/>
     <div class="info-shop">

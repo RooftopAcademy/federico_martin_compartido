@@ -11,34 +11,49 @@ import eventListeners from "../src/EventListeners";
 const container: HTMLElement | null = document.getElementById("content");
 
 function App(container: HTMLElement | null): {
-	render: (route: string, e: Event) => void;
+	render: (route: string) => void;
+	initialPage: () => void;
 } {
 	const routes: any = {
-		"http://127.0.0.1:5500/": homePage,
-		"http://127.0.0.1:5500/shop": shopPage,
-		"http://127.0.0.1:5500/details": detailsPage,
+		"#/": homePage,
+		"#/shop": shopPage,
+		"#/details": detailsPage,
 		"/404": errorPage,
 	};
 
 	const logic: any = {
-		"http://127.0.0.1:5500/": homeLogic,
-		"http://127.0.0.1:5500/shop": shopLogic,
-		"http://127.0.0.1:5500/details": detailsLogic,
+		"#/": homeLogic,
+		"#/shop": shopLogic,
+		"#/details": detailsLogic,
 		//	"/404": errorPageLogic,
 	};
 
-	function render(route: string, e: Event) {
+	function render(route: string) {
+		const splited = route.split("/");
+		const id = splited[2];
+		const section = splited.slice(0, 2).join("/");
+
 		if (container) {
-			if (routes[route]) {
-				container.innerHTML = routes[route](e);
-				logic[route]();
+			if (routes[section]) {
+				container.innerHTML = routes[section](id);
+				logic[section]();
 			} else {
 				container.innerHTML = routes["/404"]();
 			}
 		}
 	}
 
-	return { render };
+	function initialPage() {
+		window.onload = function () {
+			window.location.hash = "#/";
+		};
+		if (container) {
+			container.innerHTML = routes["#/"]();
+		}
+		homeLogic();
+	}
+
+	return { render, initialPage };
 }
 
 const app = App(container);
@@ -49,6 +64,12 @@ const store = new Store();
 	await store.setCatalog();
 })();
 
-eventListeners();
+app.initialPage();
+
+window.addEventListener("hashchange", () => {
+	const route = window.location.hash;
+
+	app.render(route);
+});
 
 export { store, app };

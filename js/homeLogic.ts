@@ -15,5 +15,5 @@ export default function homeLogic(): void {
 		});
 	}
 
-	eventListeners();
+	//eventListeners();
 }

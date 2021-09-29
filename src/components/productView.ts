@@ -6,9 +6,9 @@ export default function productView(product: ProductInt): string {
     <img src="${product.image}" class="blue-shirt" />
     <div class="product-info">
         <h2>${product.title}</h2>
-        <span>$${product.price.toFixed(
-			2
-		)}</span><a href="/details" class="router">Detalles</a>
+        <span>$${product.price.toFixed(2)}</span><a href="#/details/${
+		product.id
+	}" class="router">Detalles</a>
         <div>
             <input
                 type="number"
