@@ -1,9 +1,8 @@
-import { app } from "../js/app";
-import { store } from "../js/app";
+import Store from "./Store";
 
 const counter: HTMLElement | null = document.getElementById("counter");
 
-export default function eventListeners() {
+export default function eventListeners(store: Store) {
 	const comprarBtn: Element[] = Array.from(
 		document.getElementsByClassName("comprar")
 	);
@@ -14,8 +13,9 @@ export default function eventListeners() {
 				const target = e.target as HTMLElement;
 				const preTarget =
 					target.previousElementSibling as HTMLInputElement;
-				if (preTarget.value == "0") {
-					alert("Elige cuántas prendas quieres comprar");
+				console.log(preTarget.value);
+				if (!preTarget.value) {
+					alert("Elige cuántas prendas quieres comprar"); //cambiar por estilo error
 				} else {
 					store.cart.addProduct = Number(preTarget.value);
 					if (counter) {
@@ -25,13 +25,4 @@ export default function eventListeners() {
 			}
 		});
 	});
-
-	/*	Array.from(document.getElementsByClassName("router")).forEach((el) => {
-		el.addEventListener("click", function (e: Event) {
-			const route: string = window.location.hash;
-
-			console.log(route);
-			app.render(route);
-		});
-	});*/
 }

@@ -1,10 +1,7 @@
 import ProductInt from "./interfaces/ProductInt";
 
 export default class Catalog {
-	_products: ProductInt[];
-	constructor() {
-		this._products = [];
-	}
+	_products: ProductInt[] = [];
 
 	get products() {
 		return this._products;
@@ -15,4 +12,4 @@ export default class Catalog {
 	}
 }
 
-//tipar e inicializar en la misma linea
+//linea 4, es lo mismo que inicializar en el constructor?

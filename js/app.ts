@@ -12,7 +12,7 @@ const container: HTMLElement | null = document.getElementById("content");
 
 function App(container: HTMLElement | null): {
 	render: (route: string) => void;
-	initialPage: () => void;
+	initialPage: (window: Window) => void;
 } {
 	const routes: any = {
 		"#/": homePage,
@@ -30,12 +30,12 @@ function App(container: HTMLElement | null): {
 
 	function render(route: string) {
 		const splited = route.split("/");
-		const id = splited[2];
+		const productID = splited[2];
 		const section = splited.slice(0, 2).join("/");
 
 		if (container) {
 			if (routes[section]) {
-				container.innerHTML = routes[section](id);
+				container.innerHTML = routes[section](productID, store);
 				logic[section]();
 			} else {
 				container.innerHTML = routes["/404"]();
@@ -43,7 +43,7 @@ function App(container: HTMLElement | null): {
 		}
 	}
 
-	function initialPage() {
+	function initialPage(window: Window) {
 		window.onload = function () {
 			window.location.hash = "#/";
 		};
@@ -58,7 +58,7 @@ function App(container: HTMLElement | null): {
 
 const app = App(container);
 
-app.initialPage();
+app.initialPage(window);
 
 window.addEventListener("hashchange", () => {
 	const route = window.location.hash;
@@ -73,3 +73,5 @@ const store = new Store();
 })();
 
 export { store, app };
+
+//linea 38, esta ok pasar mas argumentos de los pedidos por dos de los casos? ts no muestra error

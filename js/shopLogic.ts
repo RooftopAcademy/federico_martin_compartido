@@ -9,6 +9,7 @@ export default function shopLogic(): void {
 
 	store.catalog.products.forEach((product: ProductInt) => {
 		appendProduct(productsContainer, product);
-		eventListeners();
 	});
+
+	eventListeners(store);
 }
