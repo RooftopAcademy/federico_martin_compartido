@@ -8,9 +8,9 @@ import shopLogic from "./shopLogic";
 import detailsLogic from "./detailsLogic";
 import fetchProducts from "../src/fetchProducts";
 
-const container: HTMLElement | null = document.getElementById("content");
+const container = document.getElementById("content") as HTMLElement;
 
-function App(container: HTMLElement | null): {
+function App(container: HTMLElement): {
 	render: (route: string) => void;
 	initialPage: (window: Window) => void;
 } {
@@ -33,13 +33,11 @@ function App(container: HTMLElement | null): {
 		const productID = splited[2];
 		const section = splited.slice(0, 2).join("/");
 
-		if (container) {
-			if (routes[section]) {
-				container.innerHTML = routes[section](productID, store);
-				logic[section]();
-			} else {
-				container.innerHTML = routes["/404"]();
-			}
+		if (routes[section]) {
+			container.innerHTML = routes[section](productID, store);
+			logic[section]();
+		} else {
+			container.innerHTML = routes["/404"]();
 		}
 	}
 
