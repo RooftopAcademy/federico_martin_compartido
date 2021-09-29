@@ -2,12 +2,12 @@ import Store from "./Store";
 
 const counter: HTMLElement | null = document.getElementById("counter");
 
-export default function eventListeners(store: Store) {
-	const comprarBtn: Element[] = Array.from(
+export default function buyBtnListeners(store: Store) {
+	const buyBtn: Element[] = Array.from(
 		document.getElementsByClassName("comprar")
 	);
 
-	comprarBtn.forEach((button: Element) => {
+	buyBtn.forEach((button: Element) => {
 		button.addEventListener("click", (e: Event) => {
 			if (e) {
 				const target = e.target as HTMLElement;

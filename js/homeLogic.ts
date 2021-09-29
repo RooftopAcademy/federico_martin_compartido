@@ -1,5 +1,3 @@
-import eventListeners from "../src/EventListeners";
-
 export default function homeLogic(): void {
 	const verProductos: HTMLElement | null =
 		document.getElementById("ver-productos");
@@ -14,6 +12,4 @@ export default function homeLogic(): void {
 			verProductos.classList.remove("visible");
 		});
 	}
-
-	//eventListeners();
 }
