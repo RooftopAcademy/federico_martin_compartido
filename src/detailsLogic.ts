@@ -1,5 +1,5 @@
-import buyBtnListeners from "../src/buyBtnListeners";
-import Store from "../src/Store";
+import buyBtnListeners from "./buyBtnListeners";
+import Store from "./Store";
 
 export default function detailsLogic(store: Store): void {
 	buyBtnListeners(store);

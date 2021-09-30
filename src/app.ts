@@ -1,5 +1,5 @@
-import Store from "../src/Store";
-import fetchProducts from "../src/fetchProducts";
+import Store from "./Store";
+import fetchProducts from "./fetchProducts";
 import routesCall from "./routesCall";
 import logicCall from "./logicCall";
 

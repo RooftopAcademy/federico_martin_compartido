@@ -1,8 +1,8 @@
-import homePage from "../src/components/homePage";
-import shopPage from "../src/components/shopPage";
-import detailsPage from "../src/components/detailsPage";
-import errorPage from "../src/components/errorPage";
-import ProductInt from "../src/interfaces/ProductInt";
+import homePage from "./components/homePage";
+import shopPage from "./components/shopPage";
+import detailsPage from "./components/detailsPage";
+import errorPage from "./components/errorPage";
+import ProductInt from "./interfaces/ProductInt";
 
 export default function routesCall(
 	section: string,
