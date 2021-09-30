@@ -1,4 +1,4 @@
-import ProductInt from "./interfaces/ProductInt";
+import ProductInt from "./interfaces/ProductInterface";
 
 export default class Catalog {
 	_products: ProductInt[] = [];

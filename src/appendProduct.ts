@@ -1,5 +1,5 @@
 import productView from "./components/productView";
-import ProductInt from "./interfaces/ProductInt";
+import ProductInt from "./interfaces/ProductInterface";
 
 export default function appendProduct(
 	doc: Document,

@@ -1,4 +1,4 @@
-import ProductInt from "../interfaces/ProductInt";
+import ProductInt from "../interfaces/ProductInterface";
 
 export default function productView(product: ProductInt): string {
 	return `

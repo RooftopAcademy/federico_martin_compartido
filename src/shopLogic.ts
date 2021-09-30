@@ -1,4 +1,4 @@
-import ProductInt from "./interfaces/ProductInt";
+import ProductInt from "./interfaces/ProductInterface";
 import appendProduct from "./appendProduct";
 import buyBtnListeners from "./buyBtnListeners";
 import Store from "./Store";

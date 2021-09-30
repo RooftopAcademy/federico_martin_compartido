@@ -1,4 +1,4 @@
-import ProductInt from "./interfaces/ProductInt";
+import ProductInt from "./interfaces/ProductInterface";
 
 export default class Product implements ProductInt {
 	title!: string;

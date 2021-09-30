@@ -2,7 +2,7 @@ import homePage from "./components/homePage";
 import shopPage from "./components/shopPage";
 import detailsPage from "./components/detailsPage";
 import errorPage from "./components/errorPage";
-import ProductInt from "./interfaces/ProductInt";
+import ProductInt from "./interfaces/ProductInterface";
 
 export default function routesCall(
 	section: string,
