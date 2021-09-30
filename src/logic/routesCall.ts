@@ -1,24 +1,28 @@
-import homePage from "../components/homePage";
 import shopPage from "../components/shopPage";
-import detailsPage from "../components/detailsPage";
+import detailsPage from "../components/detailsComponent";
 import errorPage from "../components/errorPage";
 import ProductInterface from "../interfaces/ProductInterface";
+import HomePage from "../pages/HomePage";
+import PageInterface from "../pages/PageInterface";
+import useParams from "../useParams";
+import DetailsPage from "../pages/DetailsPage";
 
-export default function routesCall(
-	section: string,
-	productID: string,
-	products: ProductInterface[]
-) {
+export default function routesCall(url : string) : HomePage {
+	const path = useParams()
+
+	console.log('PATH', path)
+
 	const routes: any = {
-		"#/": homePage,
-		"#/shop": shopPage,
-		"#/details": () => detailsPage(productID, products),
-		"/404": () => errorPage(),
+		"": HomePage,
+		"#/": HomePage,
+		// "#/shop": shopPage,
+		"#/details": DetailsPage,
+		// "/404": () => errorPage(),
 	};
 
-	if (!routes[section]) {
-		return routes["/404"]();
-	}
+	// if (!routes[path]) {
+	// 	return routes["/404"];
+	// }
 
-	return routes[section]();
+	return routes[path];
 }
