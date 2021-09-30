@@ -1,7 +1,8 @@
 import Store from "./entities/Store";
 import fetchProducts from "./fetchProducts";
-import routesCall from "./logic/routesCall";
+import getPage from "./logic/routesCall";
 import logicCall from "./logic/logicCall";
+import PageInterface from "./pages/PageInterface";
 
 const container = document.getElementById("content") as HTMLElement;
 
@@ -13,17 +14,20 @@ function App(container: HTMLElement): {
 	store.setCatalog(fetchProducts);
 
 	function render(route: string) {
-		const splited = route.split("/");
-		const productID = splited[2];
-		const section = splited.slice(0, 2).join("/");
+		let page : PageInterface = new (getPage(route) as any)
 
-		container.innerHTML = routesCall(
-			section,
-			productID,
-			store.catalog.products
-		);
+		page.render(container)
+		page.registerEvents(document)
 
-		logicCall(section, store, document);
+		// llama al router para que devuelva el componente que debe ser renderizado
+		// container.innerHTML = routesCall(
+		// 	section,
+		// 	productID,
+		// 	store.catalog.products
+		// );
+
+		// asignan eventos en la pagina
+		// logicCall(section, store, document);
 	}
 
 	return { render };
