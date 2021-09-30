@@ -1,8 +1,8 @@
-import ProductInt from "../interfaces/ProductInterface";
+import ProductInterface from "../interfaces/ProductInterface";
 
 export default function detailsPage(
 	hash: string,
-	products: ProductInt[]
+	products: ProductInterface[]
 ): string {
 	const product = products.filter((prod) => {
 		return prod.id == Number(hash);

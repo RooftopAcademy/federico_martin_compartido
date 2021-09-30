@@ -1,9 +1,9 @@
 import productView from "./components/productView";
-import ProductInt from "./interfaces/ProductInterface";
+import ProductInterface from "./interfaces/ProductInterface";
 
 export default function appendProduct(
 	doc: Document,
-	product: ProductInt
+	product: ProductInterface
 ): void {
 	const productsContainer = doc.getElementById(
 		"products-container"

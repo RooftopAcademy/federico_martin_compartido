@@ -1,6 +1,6 @@
-import ProductInt from "../interfaces/ProductInterface";
+import ProductInterface from "../interfaces/ProductInterface";
 
-export default class Product implements ProductInt {
+export default class Product implements ProductInterface {
 	title!: string;
 	id!: number;
 	price!: number;

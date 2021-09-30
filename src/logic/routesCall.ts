@@ -2,12 +2,12 @@ import homePage from "../components/homePage";
 import shopPage from "../components/shopPage";
 import detailsPage from "../components/detailsPage";
 import errorPage from "../components/errorPage";
-import ProductInt from "../interfaces/ProductInterface";
+import ProductInterface from "../interfaces/ProductInterface";
 
 export default function routesCall(
 	section: string,
 	productID: string,
-	products: ProductInt[]
+	products: ProductInterface[]
 ) {
 	const routes: any = {
 		"#/": homePage,
