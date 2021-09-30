@@ -1,7 +1,7 @@
 import Store from "./Store";
 import fetchProducts from "./fetchProducts";
 import routesCall from "./routesCall";
-import logicCall from "./logicCall";
+import logicCall from "./logic/logicCall";
 
 const container = document.getElementById("content") as HTMLElement;
 
