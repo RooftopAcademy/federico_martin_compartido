@@ -5,10 +5,9 @@ export default function appendProduct(
 	doc: Document,
 	product: ProductInt
 ): void {
-	const productsContainer: HTMLElement | null =
-		doc.getElementById("products-container");
+	const productsContainer = doc.getElementById(
+		"products-container"
+	) as HTMLElement;
 
-	if (productsContainer) {
-		productsContainer.innerHTML += productView(product);
-	}
+	productsContainer.innerHTML += productView(product);
 }
