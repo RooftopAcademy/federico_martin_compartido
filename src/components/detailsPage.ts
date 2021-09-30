@@ -1,7 +1,10 @@
-import Store from "../Store";
+import ProductInt from "../interfaces/ProductInt";
 
-export default function detailsPage(hash: string, store: Store): string {
-	const product = store.catalog.products.filter((prod) => {
+export default function detailsPage(
+	hash: string,
+	products: ProductInt[]
+): string {
+	const product = products.filter((prod) => {
 		return prod.id == Number(hash);
 	})[0];
 

@@ -1,15 +1,13 @@
-export default function homeLogic(): void {
-	const verProductos: HTMLElement | null =
-		document.getElementById("ver-productos");
+export default function homeLogic(doc: Document): void {
+	const verProductos = doc.getElementById("ver-productos") as HTMLElement;
 
-	const hoverItems: HTMLElement | null = document.getElementById("to-hover");
+	const hoverItems = doc.getElementById("to-hover") as HTMLElement;
 
-	if (verProductos && hoverItems) {
-		hoverItems.addEventListener("mouseenter", () => {
-			verProductos.classList.add("visible");
-		});
-		hoverItems.addEventListener("mouseleave", () => {
-			verProductos.classList.remove("visible");
-		});
-	}
+	hoverItems.addEventListener("mouseenter", () => {
+		verProductos.classList.add("visible");
+	});
+
+	hoverItems.addEventListener("mouseleave", () => {
+		verProductos.classList.remove("visible");
+	});
 }
