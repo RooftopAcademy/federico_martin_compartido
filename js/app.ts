@@ -6,13 +6,13 @@ import errorPage from "../src/components/errorPage";
 import homeLogic from "./homeLogic";
 import shopLogic from "./shopLogic";
 import detailsLogic from "./detailsLogic";
-import eventListeners from "../src/EventListeners";
+import fetchProducts from "../src/fetchProducts";
 
-const container: HTMLElement | null = document.getElementById("content");
+const container = document.getElementById("content") as HTMLElement;
 
-function App(container: HTMLElement | null): {
+function App(container: HTMLElement): {
 	render: (route: string) => void;
-	initialPage: () => void;
+	initialPage: (window: Window) => void;
 } {
 	const routes: any = {
 		"#/": homePage,
@@ -30,26 +30,24 @@ function App(container: HTMLElement | null): {
 
 	function render(route: string) {
 		const splited = route.split("/");
-		const id = splited[2];
+		const productID = splited[2];
 		const section = splited.slice(0, 2).join("/");
 
-		if (container) {
-			if (routes[section]) {
-				container.innerHTML = routes[section](id);
-				logic[section]();
-			} else {
-				container.innerHTML = routes["/404"]();
-			}
+		if (routes[section]) {
+			container.innerHTML = routes[section](productID, store);
+			logic[section]();
+		} else {
+			container.innerHTML = routes["/404"]();
 		}
 	}
 
-	function initialPage() {
+	function initialPage(window: Window) {
 		window.onload = function () {
 			window.location.hash = "#/";
 		};
-		if (container) {
-			container.innerHTML = routes["#/"]();
-		}
+
+		container.innerHTML = routes["#/"]();
+
 		homeLogic();
 	}
 
@@ -58,13 +56,7 @@ function App(container: HTMLElement | null): {
 
 const app = App(container);
 
-const store = new Store();
-
-(async (): Promise<void> => {
-	await store.setCatalog();
-})();
-
-app.initialPage();
+app.initialPage(window);
 
 window.addEventListener("hashchange", () => {
 	const route = window.location.hash;
@@ -72,4 +64,10 @@ window.addEventListener("hashchange", () => {
 	app.render(route);
 });
 
+const store = new Store();
+
+store.setCatalog(fetchProducts);
+
 export { store, app };
+
+//linea 38, esta ok pasar mas argumentos de los pedidos por dos de los casos? ts no muestra error

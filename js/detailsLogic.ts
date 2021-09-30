@@ -1,5 +1,6 @@
-import eventListeners from "../src/EventListeners";
+import buyBtnListeners from "../src/buyBtnListeners";
+import { store } from "./app";
 
 export default function detailsLogic(): void {
-	//eventListeners();
+	buyBtnListeners(store);
 }

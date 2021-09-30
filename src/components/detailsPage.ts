@@ -1,6 +1,6 @@
-import { store } from "../../js/app";
+import Store from "../Store";
 
-export default function detailsPage(hash: string): string {
+export default function detailsPage(hash: string, store: Store): string {
 	const product = store.catalog.products.filter((prod) => {
 		return prod.id == Number(hash);
 	})[0];
@@ -10,7 +10,7 @@ export default function detailsPage(hash: string): string {
     <div class="info-shop">
         <div class="name-price">
             <h2 id="product-name">${product.title}</h2>
-            <span>${product.price}</span>
+            <span>$${product.price.toFixed(2)}</span>
         </div>
         <div>
             <input
