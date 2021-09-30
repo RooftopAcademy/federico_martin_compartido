@@ -1,4 +1,4 @@
-import Store from "./Store";
+import Store from "./entities/Store";
 
 const counter: HTMLElement | null = document.getElementById("counter");
 

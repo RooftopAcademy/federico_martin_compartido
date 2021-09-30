@@ -1,7 +1,7 @@
 import Product from "./Product";
 import Catalog from "./Catalog";
 import Cart from "./Cart";
-import ProductInt from "./interfaces/ProductInterface";
+import ProductInt from "../interfaces/ProductInterface";
 
 export default class Store {
 	_cart: Cart;

@@ -1,6 +1,6 @@
-import Store from "./Store";
+import Store from "./entities/Store";
 import fetchProducts from "./fetchProducts";
-import routesCall from "./routesCall";
+import routesCall from "./logic/routesCall";
 import logicCall from "./logic/logicCall";
 
 const container = document.getElementById("content") as HTMLElement;

@@ -1,5 +1,5 @@
 import buyBtnListeners from "../buyBtnListeners";
-import Store from "../Store";
+import Store from "../entities/Store";
 
 export default function detailsLogic(store: Store): void {
 	buyBtnListeners(store);

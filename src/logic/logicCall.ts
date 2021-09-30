@@ -1,7 +1,7 @@
 import homeLogic from "./homeLogic";
 import shopLogic from "./shopLogic";
 import detailsLogic from "./detailsLogic";
-import Store from "../Store";
+import Store from "../entities/Store";
 
 export default function logicCall(
 	section: string,
