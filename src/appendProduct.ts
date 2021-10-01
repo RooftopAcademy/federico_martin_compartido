@@ -11,3 +11,5 @@ export default function appendProduct(
 
 	productsContainer.innerHTML += productView(product);
 }
+
+//unir a shop component

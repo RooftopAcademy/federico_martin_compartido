@@ -1,14 +1,17 @@
 import detailsComponent from "../components/detailsComponent";
 import useParams from "../useParams";
-import PageInterface from "./PageInterface";
+import PageInterface from "../interfaces/PageInterface";
+import buyBtnListeners from "../buyBtnListeners";
+import { store } from "../app";
 
-class DetailsPage implements PageInterface {
-    render(c : HTMLElement) : void {
-        const params = useParams()
-        c.innerHTML = detailsComponent(params[2], [])
-    }
+export default class DetailsPage implements PageInterface {
+	render(c: HTMLElement): void {
+		const productID = useParams().productID;
 
-    registerEvents(d : Document): void {}
+		c.innerHTML = detailsComponent(productID, store.catalog.products);
+	}
+
+	registerEvents(d: Document): void {
+		buyBtnListeners(document, store);
+	}
 }
-
-export default DetailsPage

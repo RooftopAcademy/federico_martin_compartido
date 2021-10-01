@@ -6,7 +6,7 @@ export default function detailsPage(
 	id: string,
 	products: ProductInterface[]
 ): string {
-	const product = products.find(prod => prod.id == Number(id));
+	const product = products.find((prod) => prod.id == Number(id));
 
 	return `
     ${headerComponent()}

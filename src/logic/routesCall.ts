@@ -1,22 +1,20 @@
-import shopPage from "../components/shopPage";
-import detailsPage from "../components/detailsComponent";
 import errorPage from "../components/errorPage";
-import ProductInterface from "../interfaces/ProductInterface";
 import HomePage from "../pages/HomePage";
-import PageInterface from "../pages/PageInterface";
+import ShopPage from "../pages/ShopPage";
+import PageInterface from "../interfaces/PageInterface";
 import useParams from "../useParams";
 import DetailsPage from "../pages/DetailsPage";
+import CartPage from "../pages/CartPage";
 
-export default function routesCall(url : string) : HomePage {
-	const path = useParams()
-
-	console.log('PATH', path)
+export default function routesCall(url: string): HomePage {
+	const path = useParams().path;
 
 	const routes: any = {
 		"": HomePage,
 		"#/": HomePage,
-		// "#/shop": shopPage,
+		"#/shop": ShopPage,
 		"#/details": DetailsPage,
+		"#/cart": CartPage,
 		// "/404": () => errorPage(),
 	};
 

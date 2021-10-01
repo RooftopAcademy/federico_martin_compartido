@@ -1,7 +1,7 @@
 import footerComponent from "./footerComponent";
 import headerComponent from "./headerComponent";
 
-export default function shopPage(): string {
+export default function shopComponent(): string {
 	return `
             ${headerComponent()}
 

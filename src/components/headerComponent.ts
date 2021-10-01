@@ -1,14 +1,14 @@
 export default function headerComponent() {
-    return `
+	return `
         <header>
             <div class="logo-name">
                 <i class="fas fa-tshirt"></i>
                 <h1>MiTienda</h1>
             </div>
             <div class="cart">
-                <span class="material-icons-outlined icono-cart"
+                <a href="#/cart"><span class="material-icons-outlined icono-cart"
                     >shopping_cart</span
-                >
+                ></a>
                 <span id="counter"> 0</span>
             </div>
             <label id="hamburger" class="hamburger" for="checkmenu"
@@ -26,5 +26,5 @@ export default function headerComponent() {
                 </ul>
             </navbar>
         </header>
-    `
+    `;
 }
