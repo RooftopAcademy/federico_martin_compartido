@@ -1,6 +1,6 @@
-import ProductInt from "../interfaces/ProductInt";
+import ProductInterface from "../interfaces/ProductInterface";
 
-export default function productView(product: ProductInt): string {
+export default function productView(product: ProductInterface): string {
 	return `
     <div class="product" data-index=${product.id}>
     <img src="${product.image}" class="blue-shirt" />

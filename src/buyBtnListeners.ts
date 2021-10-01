@@ -1,30 +1,26 @@
-import Store from "./Store";
+import Store from "./entities/Store";
 
-const counter: HTMLElement | null = document.getElementById("counter");
-
-export default function buyBtnListeners(store: Store) {
+export default function buyBtnListeners(doc: Document, store: Store) {
 	const buyBtn: Element[] = Array.from(
 		document.getElementsByClassName("comprar")
 	);
 
+	const counter = doc.getElementById("counter") as HTMLElement;
+
 	buyBtn.forEach((button: Element) => {
 		button.addEventListener("click", (e: Event) => {
-			if (e) {
-				const target = e.target as HTMLElement;
+			const target = e.target as HTMLElement;
+			const quantityInput =
+				target.previousElementSibling as HTMLInputElement;
 
-				const preTarget =
-					target.previousElementSibling as HTMLInputElement;
-
-				if (!preTarget.value) {
-					alert("Elige cuántas prendas quieres comprar"); //cambiar por estilo error
-				} else {
-					store.cart.addProduct = Number(preTarget.value);
-
-					if (counter) {
-						counter.innerHTML = String(store.cart.counter);
-					}
-				}
+			if (!quantityInput.value) {
+				alert("Elige cuántas prendas quieres comprar"); //cambiar por estilo error
+				return;
 			}
+
+			store.cart.addProduct(Number(quantityInput.value));
+
+			counter.innerHTML = String(store.cart.counter);
 		});
 	});
 }

@@ -1,7 +1,7 @@
 import Product from "./Product";
 import Catalog from "./Catalog";
 import Cart from "./Cart";
-import ProductInt from "./interfaces/ProductInt";
+import ProductInterface from "../interfaces/ProductInterface";
 
 export default class Store {
 	_cart: Cart;
@@ -23,8 +23,8 @@ export default class Store {
 	async setCatalog(fetchFunction: () => Promise<[]>) {
 		const data = await fetchFunction();
 
-		data.forEach((item: ProductInt) => {
-			const product: ProductInt = new Product();
+		data.forEach((item: ProductInterface) => {
+			const product: ProductInterface = new Product();
 			product.title = item.title;
 			product.id = item.id;
 			product.price = item.price;

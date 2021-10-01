@@ -1,13 +1,13 @@
-import ProductInt from "./interfaces/ProductInt";
+import ProductInterface from "../interfaces/ProductInterface";
 
 export default class Catalog {
-	_products: ProductInt[] = [];
+	_products: ProductInterface[] = [];
 
 	get products() {
 		return this._products;
 	}
 
-	addProducts(product: ProductInt) {
+	addProducts(product: ProductInterface) {
 		this._products.push(product);
 	}
 }
