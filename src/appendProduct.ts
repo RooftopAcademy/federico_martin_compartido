@@ -1,15 +1,13 @@
-import productView from "./components/productView";
 import ProductInterface from "./interfaces/ProductInterface";
 
 export default function appendProduct(
 	doc: Document,
-	product: ProductInterface
+	product: ProductInterface | { product: ProductInterface; quantity: number },
+	view: any
 ): void {
 	const productsContainer = doc.getElementById(
 		"products-container"
 	) as HTMLElement;
 
-	productsContainer.innerHTML += productView(product);
+	productsContainer.innerHTML += view(product);
 }
-
-//unir a shop component

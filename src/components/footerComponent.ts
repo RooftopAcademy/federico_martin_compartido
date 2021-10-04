@@ -1,7 +1,7 @@
 export default function footerComponent() {
-    return `
+	return `
         <footer>
             <a href="https://github.com/fl-martin">fl-martin</a>
         </footer>
-    `
+    `;
 }

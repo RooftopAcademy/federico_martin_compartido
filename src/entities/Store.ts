@@ -35,3 +35,5 @@ export default class Store {
 		});
 	}
 }
+
+// de que modo vincular el catalogo a la carta? como arguemento de sus metodos o de su constructor?

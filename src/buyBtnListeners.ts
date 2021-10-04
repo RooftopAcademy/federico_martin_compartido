@@ -1,4 +1,5 @@
 import Store from "./entities/Store";
+import ProductInterface from "./interfaces/ProductInterface";
 
 export default function buyBtnListeners(doc: Document, store: Store) {
 	const buyBtn: Element[] = Array.from(
@@ -18,9 +19,15 @@ export default function buyBtnListeners(doc: Document, store: Store) {
 				return;
 			}
 
-			store.cart.addProduct(Number(quantityInput.value));
+			const productID = Number(target.dataset.index);
 
-			counter.innerHTML = String(store.cart.counter);
+			const product = store.catalog.getProduct(
+				productID
+			) as ProductInterface;
+
+			store.cart.addProduct(product, Number(quantityInput.value));
+
+			counter.innerHTML = String(store.cart.counter); //donde ubicar este manejo del DOM? funcion update counter?
 		});
 	});
 }

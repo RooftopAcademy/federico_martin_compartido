@@ -4,6 +4,7 @@ import shopComponent from "../components/shopComponent";
 import appendProduct from "../appendProduct";
 import buyBtnListeners from "../buyBtnListeners";
 import { store } from "../app";
+import productView from "../components/productView";
 
 export default class ShopPage implements PageInterface {
 	render(c: HTMLElement): void {
@@ -12,7 +13,7 @@ export default class ShopPage implements PageInterface {
 
 	registerEvents() {
 		store.catalog.products.forEach((product: ProductInterface) => {
-			appendProduct(document, product);
+			appendProduct(document, product, productView);
 		});
 
 		buyBtnListeners(document, store);

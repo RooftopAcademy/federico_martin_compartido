@@ -11,7 +11,7 @@ export default function homeComponent(): string {
 						checkroom
 					</span></br>
 					<a href="#/shop" id="ver-productos" class="fade hidden ver-productos router"
-						>Ver Listado de Productossss</a
+						>Ver Listado de Productos</a
 					>
 				</div>
 			</article>
