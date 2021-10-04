@@ -1,14 +1,13 @@
 import headerComponent from "./headerComponent";
 import footerComponent from "./footerComponent";
-import ProductInterface from "../interfaces/ProductInterface";
 
-export default function cartComponent(
-	cartList: { product: ProductInterface; quantity: number }[]
-): string {
+export default function cartComponent(): string {
 	return `
 			${headerComponent()}
 
-			<div>${cartList}</div>
+			<article id="products-container">
+			<!-- JS -->
+			</article>
 
 			${footerComponent()}
         `;

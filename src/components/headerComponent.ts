@@ -9,7 +9,7 @@ export default function headerComponent() {
                 <a href="#/cart"><span class="material-icons-outlined icono-cart"
                     >shopping_cart</span
                 ></a>
-                <span id="counter"> 0</span>
+                <span id="counter"></span>
             </div>
             <label id="hamburger" class="hamburger" for="checkmenu"
                 ><i class="fas fa-bars"></i
