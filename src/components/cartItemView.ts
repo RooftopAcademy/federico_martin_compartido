@@ -4,5 +4,14 @@ export default function (item: {
 	product: ProductInterface;
 	quantity: number;
 }): string {
-	return `<div>${item.product.title}${item.quantity}</div>`;
+	return `<div class="cart-item">
+				<div>
+					<img src="${item.product.image}"/>
+					${item.product.title}
+				</div>
+				<div>
+					${item.product.price}
+					X ${item.quantity}
+				</div>
+			</div>`;
 }

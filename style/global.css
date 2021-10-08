@@ -12,17 +12,23 @@ body {
 	flex-direction: column;
 }
 
+section {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
 header {
-	padding: 1.5rem 1em 0 1em;
+	padding: 1.5rem 3em 0 3em;
 	color: #ff9f1c;
 	background-color: #cbf3f0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	flex-wrap: wrap;
 }
 
-header h1 {
+header .title {
+	color: #ff9f1c;
 	font-size: 3.5rem;
 	font-weight: 50;
 	font-family: "Lobster", cursive;
@@ -44,10 +50,17 @@ header h1 {
 	font-size: 1.3rem;
 	margin-right: 1rem;
 	margin-bottom: 1.5rem;
+	margin-left: 3em;
 }
 
 .icono-cart {
 	font-size: 2em !important;
+	color: #ffbf69;
+	transition: 0.5s;
+}
+
+.icono-cart:hover {
+	color: #ff9f1c;
 }
 
 .fa,
@@ -87,12 +100,16 @@ header navbar ul {
 	display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 780px) {
+	header {
+		padding: 1.5rem 0.8em 0 0.8em;
+		flex-wrap: wrap;
+	}
 	.fa,
 	.fas {
 		font-size: 2.2rem;
 	}
-	header h1 {
+	header .title {
 		font-size: 2.2rem;
 	}
 	.cart {
@@ -119,7 +136,6 @@ header navbar ul {
 
 .content {
 	margin: auto;
-	margin-top: 2em;
 	text-align: center;
 	flex-grow: 1;
 }
@@ -128,6 +144,7 @@ article {
 	display: flex;
 	flex-direction: column;
 	gap: 1.5em;
+	flex-grow: 2;
 }
 
 .cantidad {

@@ -3,7 +3,7 @@ export default function headerComponent() {
         <header>
             <div class="logo-name">
                 <i class="fas fa-tshirt"></i>
-                <h1>MiTienda</h1>
+                <a href="#/" class="title">MiTienda</a>
             </div>
             <div class="cart">
                 <a href="#/cart"><span class="material-icons-outlined icono-cart"
