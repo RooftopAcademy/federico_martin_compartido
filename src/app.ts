@@ -3,7 +3,7 @@ import fetchProducts from "./fetchProducts";
 import getPage from "./logic/routesCall";
 import PageInterface from "./interfaces/PageInterface";
 
-const container = document.getElementById("content") as HTMLElement;
+const container = document.getElementById("container") as HTMLElement;
 
 function App(container: HTMLElement): {
 	render: (route: string) => void;
@@ -17,7 +17,7 @@ function App(container: HTMLElement): {
 		let page: PageInterface = new (getPage(route) as any)();
 
 		page.render(container);
-		page.registerEvents(document);
+		page.pageScript(document);
 	}
 
 	return { render, store };
