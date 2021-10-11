@@ -8,7 +8,7 @@ export default function cartComponent(): string {
 				<div id="products-container">
 					<!-- JS -->
 				</div>
-				<button>Comprar</button>
+				<button>Checkout</button>
 			</article>
 
 			${footerComponent()}

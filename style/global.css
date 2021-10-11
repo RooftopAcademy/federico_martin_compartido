@@ -126,25 +126,17 @@ header navbar ul {
 	.menu {
 		display: none;
 	}
+	.menu ul li a {
+		font-size: 0.65em;
+	}
 	.checkmenu:checked + .menu {
-		display: block;
+		display: flex;
+		justify-content: end;
+		padding-right: 1em;
 		width: 100%;
 		border-top: 1px solid rgb(83, 83, 83);
 		margin-bottom: 0.5rem;
 	}
-}
-
-.content {
-	margin: auto;
-	text-align: center;
-	flex-grow: 1;
-}
-
-article {
-	display: flex;
-	flex-direction: column;
-	gap: 1.5em;
-	flex-grow: 2;
 }
 
 .cantidad {

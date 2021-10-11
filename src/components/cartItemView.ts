@@ -13,5 +13,6 @@ export default function (item: {
 					${item.product.price}
 					X ${item.quantity}
 				</div>
+				<button data-id="${item.product.id}" class="cart-remove">X</button>
 			</div>`;
 }

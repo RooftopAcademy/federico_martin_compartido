@@ -1,5 +1,5 @@
-img {
-	width: 100%;
+.img-details {
+	width: 90%;
 	object-fit: cover;
 	border: 5px solid #ffbf69;
 	border-radius: 20px;
@@ -18,7 +18,6 @@ img {
 	justify-content: center;
 	flex-direction: column;
 	align-items: flex-start;
-	white-space: nowrap;
 }
 
 .name-price h2 {
@@ -41,21 +40,33 @@ img {
 	width: 100%;
 }
 
-article {
+.details-container {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 2fr 0.4fr 3fr;
+	grid-template-rows: 1fr 0.4fr 0fr;
 	grid-template-areas:
 		"img"
 		"name-price"
 		"details";
-	margin: 0 2em 0 2em;
+	margin: auto;
+	margin-top: 3em;
 	gap: 0.2em;
 	max-width: 70%;
-	margin: auto;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 780px) {
+	.details-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		grid-template-areas:
+			"img name-price"
+			"img details";
+		margin: auto;
+		margin-top: 3em;
+		gap: 0.2em;
+		max-width: 70%;
+	}
 	.name-price h2 {
 		font-size: 2rem;
 		margin-bottom: 0.5rem;
@@ -66,5 +77,8 @@ article {
 	}
 	.detalles {
 		font-size: 1.6rem;
+	}
+	.img-details {
+		width: 50%;
 	}
 }
