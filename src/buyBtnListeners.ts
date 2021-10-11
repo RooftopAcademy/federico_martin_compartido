@@ -27,7 +27,10 @@ export default function buyBtnListeners(doc: Document, store: Store) {
 
 			store.cart.addProduct(product, Number(quantityInput.value));
 
-			counter.innerHTML = String(store.cart.counter); //donde ubicar este manejo del DOM? funcion update counter?
+			store.cart.setCounter();
+
+			//	counter.innerHTML = String(store.cart.counter); //donde ubicar este manejo del DOM? usar el hashchange?
+			window.dispatchEvent(new HashChangeEvent("hashchange"));
 		});
 	});
 }

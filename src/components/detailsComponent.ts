@@ -11,8 +11,8 @@ export default function detailsPage(
 	return `
     ${headerComponent()}
 
-        <article>
-            <img src="${product?.image}"/>
+        <article class="details-container">
+            <img src="${product?.image}" class="img-details"/>
             <div class="info-shop">
                 <div class="name-price">
                     <h2 id="product-name">${product?.title}</h2>

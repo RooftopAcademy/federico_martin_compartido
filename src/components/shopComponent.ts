@@ -5,7 +5,7 @@ export default function shopComponent(): string {
 	return `
             ${headerComponent()}
 
-                <article id="products-container">
+                <article id="products-container" class="products-container">
                     <!-- JS -->
                 </article>
             

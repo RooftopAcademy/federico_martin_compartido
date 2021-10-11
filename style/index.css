@@ -1,3 +1,13 @@
+.content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-bottom: 8em;
+	margin: auto;
+	text-align: center;
+	flex-grow: 1;
+}
+
 .icono-central {
 	color: #ffbf69;
 	transition: 1s;
@@ -21,11 +31,7 @@
 	opacity: 1;
 }
 
-article {
-	margin-top: 5rem;
-}
-
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 780px) {
 	.icono-central {
 		font-size: 10rem !important;
 	}
