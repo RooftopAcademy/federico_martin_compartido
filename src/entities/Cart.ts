@@ -20,8 +20,6 @@ export default class Cart {
 		}
 
 		this.products.push({ product: product, quantity: quantity });
-		//esto aca o en donde es llamado addProdudct, el listener?
-		this.setCounter();
 	}
 
 	removeProduct(id: number) {
@@ -33,12 +31,8 @@ export default class Cart {
 		}
 
 		this.products[index].quantity -= 1;
-
-		this.setCounter();
 	}
 }
 
-//es coding smell llamar a un metodo desde otro?
-//que va dentro de los if en remove y add? deberian ser mas "simetricos"? cual es la excepcion para quedar con mas espaciado?
 //cuando el boton desaparezca del dom, no va a existir este problema, pero en este contexto si. Deberia estar la funcion remove
 //cubierta ante la situacion de que !this.products[index]? leia 35
