@@ -1,7 +1,13 @@
 import ProductInterface from "../interfaces/ProductInterface";
+import List from "./List";
 
-export default class Catalog {
+export default class CatalogList extends List {
 	_products: ProductInterface[] = [];
+	results: ProductInterface[] = [...this._products];
+
+	constructor() {
+		super();
+	}
 
 	get products() {
 		return this._products;
@@ -15,5 +21,3 @@ export default class Catalog {
 		this._products.push(product);
 	}
 }
-
-//linea 4, es lo mismo que inicializar en el constructor?
