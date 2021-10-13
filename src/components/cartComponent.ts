@@ -4,7 +4,7 @@ import footerComponent from "./footerComponent";
 export default function cartComponent(): string {
 	return `
 			${headerComponent()}
-			<article>
+			<article class="cart-container">
 				<div id="products-container">
 					<!-- JS -->
 				</div>

@@ -1,15 +1,15 @@
 import Product from "./Product";
-import Catalog from "./Catalog";
+import CatalogList from "./Catalog";
 import Cart from "./Cart";
 import ProductInterface from "../interfaces/ProductInterface";
 
 export default class Store {
 	_cart: Cart;
-	_catalog: Catalog;
+	_catalog: CatalogList;
 
 	constructor() {
 		this._cart = new Cart();
-		this._catalog = new Catalog();
+		this._catalog = new CatalogList();
 	}
 
 	get cart() {
