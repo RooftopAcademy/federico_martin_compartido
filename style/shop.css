@@ -1,12 +1,30 @@
+.list-container {
+	display: flex;
+}
+
+.categories-nav {
+	background-color: #cbf3f0;
+	padding: 1em;
+	gap: 0.5em;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+
+.categories-nav label {
+	white-space: nowrap;
+}
+
 .products-container {
 	display: flex;
+	flex-grow: 2;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: 2em;
 	flex-wrap: wrap;
 	padding: 3em 2em 1em 2em;
-	min-width: 90%;
+	min-width: 70%;
 }
 .product {
 	display: flex;

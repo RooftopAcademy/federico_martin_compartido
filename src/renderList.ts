@@ -1,16 +1,18 @@
-import { store } from "./app";
 import appendProduct from "./appendProduct";
 import productView from "./components/productView";
+import CatalogList from "./entities/Catalog";
 import ProductInterface from "./interfaces/ProductInterface";
 
-export default function renderList() {
+export default function renderList(catalog: CatalogList) {
 	let sortedItems;
 
-	sortedItems = store.catalog.getSortedItems() as ProductInterface[];
+	sortedItems = catalog.getSortedItems() as ProductInterface[];
 
-	if (!sortedItems) sortedItems = store.catalog.products;
+	if (!sortedItems) sortedItems = catalog.products;
 
 	sortedItems.forEach((product: ProductInterface) => {
+		//		if (catalog.activeCategories[product.category]) {
 		appendProduct(document, product, productView);
+		//		}
 	});
 }

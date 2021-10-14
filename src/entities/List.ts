@@ -4,15 +4,18 @@ export default abstract class List {
 	obj: {} = {};
 	cache: Map<{}, ProductInterface[]> = new Map();
 	_products!: ProductInterface[];
+	_activeCategories!: {
+		[category: string]: boolean;
+	};
 
 	setSorting(obj = {}) {
 		this.obj = obj;
 
 		if (this.cache.has(obj)) return;
 
-		let keys = Object.keys(obj);
-
 		const temp = [...this._products];
+
+		let keys = Object.keys(obj);
 
 		keys.forEach((key) => {
 			this.sortByKey(temp, key);
