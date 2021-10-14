@@ -26,6 +26,7 @@ export default class Store {
 		data.forEach((item: ProductInterface) => {
 			const product: ProductInterface = new Product();
 			product.title = item.title;
+			product.category = item.category;
 			product.id = item.id;
 			product.price = item.price;
 			product.description = item.description;

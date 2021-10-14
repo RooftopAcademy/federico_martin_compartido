@@ -1,11 +1,10 @@
 import PageInterface from "../interfaces/PageInterface";
-import ProductInterface from "../interfaces/ProductInterface";
 import shopComponent from "../components/shopComponent";
-import appendProduct from "../appendProduct";
 import buyBtnListeners from "../buyBtnListeners";
 import { store } from "../app";
-import productView from "../components/productView";
 import updateCartCounter from "../updateCartCounter";
+import renderList from "../renderList";
+import sortBtnListeners from "../sortBtnListeners";
 
 export default class ShopPage implements PageInterface {
 	render(c: HTMLElement): void {
@@ -13,11 +12,11 @@ export default class ShopPage implements PageInterface {
 	}
 
 	pageScript() {
-		store.catalog.products.forEach((product: ProductInterface) => {
-			appendProduct(document, product, productView);
-		});
+		renderList();
 
 		buyBtnListeners(document, store);
+
+		sortBtnListeners(document, store.catalog);
 
 		updateCartCounter(document, store);
 	}
