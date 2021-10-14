@@ -2,13 +2,18 @@ import ProductInterface from "../interfaces/ProductInterface";
 
 export default class Product implements ProductInterface {
 	title!: string;
+	category!: string;
 	id!: number;
 	price!: number;
 	description!: string;
 	image!: string;
 
-	geTTitle() {
+	getTitle() {
 		return this.title;
+	}
+
+	getCategory() {
+		return this.category;
 	}
 
 	getPrice() {

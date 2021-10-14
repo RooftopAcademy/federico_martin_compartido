@@ -2,11 +2,9 @@ import ProductInterface from "../interfaces/ProductInterface";
 import List from "./List";
 
 export default class CatalogList extends List {
-	_products: ProductInterface[] = [];
-	results: ProductInterface[] = [...this._products];
-
 	constructor() {
 		super();
+		this._products = [] as ProductInterface[];
 	}
 
 	get products() {
@@ -18,6 +16,6 @@ export default class CatalogList extends List {
 	}
 
 	addProducts(product: ProductInterface) {
-		this._products.push(product);
+		this.products.push(product);
 	}
 }
