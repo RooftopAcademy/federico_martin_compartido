@@ -11,8 +11,8 @@ export default function renderList(catalog: CatalogList) {
 	if (!sortedItems) sortedItems = catalog.products;
 
 	sortedItems.forEach((product: ProductInterface) => {
-		//		if (catalog.activeCategories[product.category]) {
-		appendProduct(document, product, productView);
-		//		}
+		if (catalog.activeCategories.state[product.category]) {
+			appendProduct(document, product, productView);
+		}
 	});
 }

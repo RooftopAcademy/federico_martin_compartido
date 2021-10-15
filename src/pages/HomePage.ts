@@ -2,6 +2,7 @@ import PageInterface from "../interfaces/PageInterface";
 import homeComponent from "../components/homeComponent";
 import updateCartCounter from "../updateCartCounter";
 import { store } from "../app";
+import initialCategoryListeners from "../initialCategoryListeners";
 
 export default class HomePage implements PageInterface {
 	render(c: HTMLElement): void {
@@ -9,16 +10,23 @@ export default class HomePage implements PageInterface {
 	}
 
 	pageScript(d: Document): void {
-		const verProductos = d.getElementById("ver-productos") as HTMLElement;
+		const verProductos = Array.from(
+			d.getElementsByClassName("ver-productos")
+		) as HTMLElement[];
+
 		const hoverItems = d.getElementById("to-hover") as HTMLElement;
 
 		hoverItems.addEventListener("mouseenter", () => {
-			verProductos.classList.add("visible");
+			verProductos.forEach((button) => button.classList.add("visible"));
 		});
 
 		hoverItems.addEventListener("mouseleave", () => {
-			verProductos.classList.remove("visible");
+			verProductos.forEach((button) =>
+				button.classList.remove("visible")
+			);
 		});
+
+		initialCategoryListeners(document, store.catalog.activeCategories);
 
 		updateCartCounter(document, store);
 	}

@@ -14,14 +14,13 @@ export default class CartPage implements PageInterface {
 	}
 
 	pageScript() {
-		//extraer junto a ShopPage
 		store.cart.products.forEach(
 			(product: { product: ProductInterface; quantity: number }) => {
 				appendProduct(document, product, cartItemView);
 			}
 		);
 		deleteBtnListeners(document, store.cart);
+
 		updateCartCounter(document, store);
-		//update lista de productos DOM
 	}
 }

@@ -1,16 +1,14 @@
 import ProductInterface from "../interfaces/ProductInterface";
+import ActiveCategories from "./ActiveCategories";
 import List from "./List";
 
 export default class CatalogList extends List {
+	_activeCategories: ActiveCategories;
+
 	constructor() {
 		super();
 		this._products = [] as ProductInterface[];
-		this._activeCategories = {
-			electronics: false,
-			jewelery: false,
-			"men's clothing": false,
-			"women's clothing": false,
-		};
+		this._activeCategories = new ActiveCategories();
 	}
 
 	get products() {
@@ -19,13 +17,6 @@ export default class CatalogList extends List {
 
 	get activeCategories() {
 		return this._activeCategories;
-	}
-
-	setCategories(category: string) {
-		this.activeCategories[category]
-			? (this.activeCategories[category] = false)
-			: (this.activeCategories[category] = true);
-		console.log(this.activeCategories);
 	}
 
 	getProduct(id: number) {
