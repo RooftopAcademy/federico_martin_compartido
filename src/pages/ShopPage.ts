@@ -5,6 +5,8 @@ import { store } from "../app";
 import updateCartCounter from "../updateCartCounter";
 import renderList from "../renderList";
 import sortBtnListeners from "../sortBtnListeners";
+import updateCategoriesNav from "../updateCategoriesNav";
+import categorySelectorsListeners from "../categorySelectorsListeners";
 
 export default class ShopPage implements PageInterface {
 	render(c: HTMLElement): void {
@@ -17,6 +19,10 @@ export default class ShopPage implements PageInterface {
 		buyBtnListeners(document, store);
 
 		sortBtnListeners(document, store.catalog);
+
+		categorySelectorsListeners(document, store.catalog.activeCategories);
+
+		updateCategoriesNav(document, store.catalog.activeCategories);
 
 		updateCartCounter(document, store);
 	}

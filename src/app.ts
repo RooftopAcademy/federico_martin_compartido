@@ -17,6 +17,7 @@ function App(container: HTMLElement): {
 		let page: PageInterface = new (getPage(route) as any)();
 
 		page.render(container);
+
 		page.pageScript(document);
 	}
 

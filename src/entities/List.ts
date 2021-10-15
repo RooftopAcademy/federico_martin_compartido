@@ -4,9 +4,6 @@ export default abstract class List {
 	obj: {} = {};
 	cache: Map<{}, ProductInterface[]> = new Map();
 	_products!: ProductInterface[];
-	_activeCategories!: {
-		[category: string]: boolean;
-	};
 
 	setSorting(obj = {}) {
 		this.obj = obj;

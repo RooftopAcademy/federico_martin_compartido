@@ -10,9 +10,22 @@ export default function homeComponent(): string {
 					<span class="material-icons-outlined icono-central" id="icon">
 						checkroom
 					</span></br>
-					<a href="#/shop" id="ver-productos" class="fade hidden ver-productos router"
-						>Ver Listado de Productos</a
-					>
+					
+					<button value="electronics" class="category-selector">
+						<a href="#/shop" id="ver-productos" class="fade hidden ver-productos router">Electrónica</a>
+					</button>
+
+					<button value="jewelery" class="category-selector">
+						<a href="#/shop" id="ver-productos" class="fade hidden ver-productos router">Joyería</a>
+					</button>
+
+					<button value="men's clothing" class="category-selector">
+						<a href="#/shop" id="ver-productos" class="fade hidden ver-productos router">Ropa masculina</a>
+					</button>
+
+					<button value="women's clothing" class="category-selector">
+						<a href="#/shop" id="ver-productos" class="fade hidden ver-productos router">Ropa femenina</a>
+					</button>
 				</div>
 			</article>
 

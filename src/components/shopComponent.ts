@@ -5,11 +5,11 @@ export default function shopComponent(): string {
 	return `
             ${headerComponent()}
                 <div class="list-container">
-                    <navbar class="categories-nav">
-                      <label><input type="checkbox" value="electronics">Electronica</label>
-                      <label><input type="checkbox" value="jewelery">Joyería</label>
-                      <label><input type="checkbox" value="men's clothing">Ropa masculina</label>
-                      <label><input type="checkbox" value="women's clothing">Ropa femenina</label>
+                    <navbar class="categories-nav" id="categories-nav">
+                      <label><input type="checkbox" class="category-selector" value="electronics">Electronica</label>
+                      <label><input type="checkbox" class="category-selector" value="jewelery">Joyería</label>
+                      <label><input type="checkbox" class="category-selector" value="men's clothing">Ropa masculina</label>
+                      <label><input type="checkbox" class="category-selector" value="women's clothing">Ropa femenina</label>
                     </navbar>
                     <article id="products-container" class="products-container">
                         <navbar>
