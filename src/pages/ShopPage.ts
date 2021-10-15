@@ -12,7 +12,7 @@ export default class ShopPage implements PageInterface {
 	}
 
 	pageScript() {
-		renderList();
+		renderList(store.catalog);
 
 		buyBtnListeners(document, store);
 
