@@ -1,4 +1,4 @@
-import ProductInterface from "./interfaces/ProductInterface";
+import ProductInterface from "../interfaces/ProductInterface";
 
 export default function appendProduct(
 	doc: Document,

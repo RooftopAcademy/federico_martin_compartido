@@ -1,4 +1,4 @@
-import Cart from "./entities/Cart";
+import Cart from "../entities/Cart";
 
 export default function deleteBtnListeners(doc: Document, cart: Cart) {
 	const buttons = doc.getElementsByClassName("cart-remove");

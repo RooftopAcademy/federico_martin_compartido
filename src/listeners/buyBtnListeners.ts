@@ -1,5 +1,5 @@
-import Store from "./entities/Store";
-import ProductInterface from "./interfaces/ProductInterface";
+import Store from "../entities/Store";
+import ProductInterface from "../interfaces/ProductInterface";
 
 export default function buyBtnListeners(doc: Document, store: Store) {
 	const buyBtn: Element[] = Array.from(
@@ -29,7 +29,6 @@ export default function buyBtnListeners(doc: Document, store: Store) {
 
 			store.cart.setCounter();
 
-			//	counter.innerHTML = String(store.cart.counter); //donde ubicar este manejo del DOM? usar el hashchange?
 			window.dispatchEvent(new HashChangeEvent("hashchange"));
 		});
 	});

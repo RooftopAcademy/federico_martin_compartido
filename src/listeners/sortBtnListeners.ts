@@ -1,5 +1,5 @@
-import CatalogList from "./entities/Catalog";
-import SortObject from "./entities/SortObject";
+import CatalogList from "../entities/Catalog";
+import SortObject from "../entities/SortObject";
 
 export default function sortBtnListeners(doc: Document, catalog: CatalogList) {
 	const sortCheck = Array.from(

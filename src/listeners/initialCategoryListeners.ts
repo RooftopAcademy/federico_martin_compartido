@@ -1,9 +1,11 @@
-import ActiveCategories from "./entities/ActiveCategories";
+import ActiveCategories from "../entities/ActiveCategories";
 
 export default function initialCategoryListeners(
 	doc: Document,
 	activeCategories: ActiveCategories
 ) {
+	//activeCategories.resetState();
+
 	const categorySelectors = Array.from(
 		doc.getElementsByClassName("category-selector")
 	) as HTMLButtonElement[];

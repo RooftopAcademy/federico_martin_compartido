@@ -1,8 +1,8 @@
 import PageInterface from "../interfaces/PageInterface";
 import homeComponent from "../components/homeComponent";
-import updateCartCounter from "../updateCartCounter";
+import updateCartCounter from "../dom/updateCartCounter";
 import { store } from "../app";
-import initialCategoryListeners from "../initialCategoryListeners";
+import initialCategoryListeners from "../listeners/initialCategoryListeners";
 
 export default class HomePage implements PageInterface {
 	render(c: HTMLElement): void {

@@ -2,11 +2,11 @@ import PageInterface from "../interfaces/PageInterface";
 import cartComponent from "../components/cartComponent";
 import { store } from "../app";
 
-import appendProduct from "../appendProduct";
+import appendProduct from "../dom/appendProduct";
 import ProductInterface from "../interfaces/ProductInterface";
 import cartItemView from "../components/cartItemView";
-import updateCartCounter from "../updateCartCounter";
-import deleteBtnListeners from "../deleteBtnListers";
+import updateCartCounter from "../dom/updateCartCounter";
+import deleteBtnListeners from "../listeners/deleteBtnListers";
 
 export default class CartPage implements PageInterface {
 	render(c: HTMLElement) {

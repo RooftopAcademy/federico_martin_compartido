@@ -21,4 +21,10 @@ export default class ActiveCategories {
 			? (this.state[category] = false)
 			: (this.state[category] = true);
 	}
+
+	resetState() {
+		for (const category in this.state) {
+			this.state[category] = false;
+		}
+	}
 }

@@ -1,7 +1,7 @@
 import appendProduct from "./appendProduct";
-import productView from "./components/productView";
-import CatalogList from "./entities/Catalog";
-import ProductInterface from "./interfaces/ProductInterface";
+import productView from "../components/productView";
+import CatalogList from "../entities/Catalog";
+import ProductInterface from "../interfaces/ProductInterface";
 
 export default function renderList(catalog: CatalogList) {
 	let sortedItems;

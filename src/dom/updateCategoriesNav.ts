@@ -1,4 +1,4 @@
-import ActiveCategories from "./entities/ActiveCategories";
+import ActiveCategories from "../entities/ActiveCategories";
 
 export default function updateCategoriesNav(
 	doc: Document,

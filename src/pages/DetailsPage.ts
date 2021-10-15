@@ -1,9 +1,9 @@
 import detailsComponent from "../components/detailsComponent";
-import useParams from "../useParams";
+import useParams from "../logic/useParams";
 import PageInterface from "../interfaces/PageInterface";
-import buyBtnListeners from "../buyBtnListeners";
+import buyBtnListeners from "../listeners/buyBtnListeners";
 import { store } from "../app";
-import updateCartCounter from "../updateCartCounter";
+import updateCartCounter from "../dom/updateCartCounter";
 
 export default class DetailsPage implements PageInterface {
 	render(c: HTMLElement): void {

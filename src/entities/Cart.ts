@@ -11,7 +11,7 @@ export default class Cart {
 	}
 
 	addProduct(product: ProductInterface, quantity: number) {
-		if (this.products.some((prod) => prod.product.id == product.id)) {
+		if (this.products.some((prod) => prod.product?.id == product?.id)) {
 			const index = this.products.findIndex(
 				(prod) => prod.product == product
 			);

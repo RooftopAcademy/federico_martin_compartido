@@ -1,12 +1,12 @@
 import PageInterface from "../interfaces/PageInterface";
 import shopComponent from "../components/shopComponent";
-import buyBtnListeners from "../buyBtnListeners";
+import buyBtnListeners from "../listeners/buyBtnListeners";
 import { store } from "../app";
-import updateCartCounter from "../updateCartCounter";
-import renderList from "../renderList";
-import sortBtnListeners from "../sortBtnListeners";
-import updateCategoriesNav from "../updateCategoriesNav";
-import categorySelectorsListeners from "../categorySelectorsListeners";
+import updateCartCounter from "../dom/updateCartCounter";
+import renderList from "../dom/renderList";
+import sortBtnListeners from "../listeners/sortBtnListeners";
+import updateCategoriesNav from "../dom/updateCategoriesNav";
+import categorySelectorsListeners from "../listeners/categorySelectorsListeners";
 
 export default class ShopPage implements PageInterface {
 	render(c: HTMLElement): void {

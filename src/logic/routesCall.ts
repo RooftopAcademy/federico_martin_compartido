@@ -1,8 +1,6 @@
-import errorPage from "../components/errorPage";
 import HomePage from "../pages/HomePage";
 import ShopPage from "../pages/ShopPage";
-import PageInterface from "../interfaces/PageInterface";
-import useParams from "../useParams";
+import useParams from "./useParams";
 import DetailsPage from "../pages/DetailsPage";
 import CartPage from "../pages/CartPage";
 
